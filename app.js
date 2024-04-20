@@ -35,7 +35,7 @@ app.listen(port, () => {
 async function sendLinkToDingTalk(item, text) {
   try {
     const e = getValue(item.fields, 'Environment')
-    let es = e ? `环境: ${e}` : ''
+    let es = e ? `环境: ${e} ` : ''
     const onlyEnv = process.env.GW_ONLY_ENV
     if (onlyEnv && onlyEnv.trim().split(',').indexOf(e) === -1) {
       console.log(`跳过通知 环境:${e}`);
@@ -45,7 +45,7 @@ async function sendLinkToDingTalk(item, text) {
 
     let link = {
       "text": item.title,
-      "title": `${es} ${item.title}`,
+      "title": `${es}${item.title}`,
       // "picUrl": "",
       "messageUrl": item.title_link,
     };
