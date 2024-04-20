@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  glichtip-webhook:
+    container_name: glichtip-webhook
+    image: 2720851545/glichtip-webhook:2024-04-20
+    restart: always
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    environment:
+      - GW_BASEURL=https://oapi.dingtalk.com/robot/send
+      - GW_ACCESSTOKEN=6e124b6de6155c2c6f1d87c9225cd498608618fa4c173a9749a5xxxx
+      - GW_SECRET=SEC7f81884eaf568a6bd3b3b671f1ea85760f027c3d6b3c11903ff87fxxxxxxxxxx
+      # 钉钉通知指定环境
+      # - GW_ONLY_ENV=production,dev
+    ports:
+      - "3123:3123"
+
+  
