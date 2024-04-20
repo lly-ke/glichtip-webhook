@@ -2,8 +2,8 @@ glichtip 钉钉异常通知
 
 glichtip webhook 转发钉钉机器人
 
+# 1. 运行
 
-# 运行
 ## Docker
 
 ```shell
@@ -14,9 +14,16 @@ glichtip webhook 转发钉钉机器人
   2720851545/glichtip-webhook:2024-04-20
 ```
 
-##  Docker Compose
+## Docker Compose
 
 [下载 compose 文件](https://github.com/lly-ke/glichtip-webhook/raw/main/docker-compose.yml)
+
 ```
 docker compose up -d
 ```
+
+# 2. GlitchTip 配置webhook
+
+![](./pics/1.png)
+
+填入: `http://localhost:3123/webhook`
